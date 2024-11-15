@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 3 - Analyse avancée et indicateurs</title>
+    <link rel="stylesheet" href="style_mission3.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo de l'entreprise KDou" class="logo">
+        </div>
+        <h1>Mission 3 - Analyse avancée et indicateurs</h1>
+        <p>Analyse approfondie des données de l'entreprise KDou pour générer des indicateurs stratégiques.</p>
+    </header>
+
+    <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776; Menu</label>
+        <ul class="nav-links">
+            <li><a href="#Intro">Introduction</a></li>
+            <li><a href="#Analyse">Analyse des données</a></li>
+            <li><a href="#Indicateurs">Indicateurs clés</a></li>
+            <li><a href="#Tableaux">Tableaux d'analyse</a></li>
+            <li><a href="#Images">Images</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="Intro">
+            <h2>Introduction</h2>
+            <p>Dans cette mission, nous avons effectué une analyse approfondie des données de KDou afin de proposer des indicateurs stratégiques permettant à l'entreprise d'améliorer ses processus et de prendre de meilleures décisions.</p>
+        </section>
+        
+        <section class="objectif-principal-section">
+            <div class="left-block">
+                <h3>Objectif Principal</h3>
+            </div>
+            <div class="right-block">
+                <p>L'objectif principal de la Mission 3 est d'analyser les données relatives aux produits, aux fournisseurs, et aux ventes pour KDou, dans le but de mieux comprendre la performance des produits et des catégories.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Analyse des Indicateurs</h2>
+            
+            <!-- Conteneur 1 : Desserts/Boissons -->
+            <div class="theme-container">
+                <h3 class="theme-title">Desserts/Boissons</h3>
+                <div class="analyse-table-container">
+                    <table class="analyse-table">
+                        <thead>
+                            <tr>
+                                <th>Indicateur</th>
+                                <th>Objectif</th>
+                                <th>Calcul</th>
+                                <th>Importance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Part des ventes de desserts et boissons dans le chiffre d'affaires</td>
+                                <td>Mesurer la contribution des desserts et des boissons au chiffre d’affaires global</td>
+                                <td>Part des Desserts/Boissons = (Ventes Desserts + Boissons) / Chiffre d’Affaires Total × 100</td>
+                                <td>Évalue l'importance des desserts et des boissons par rapport aux autres produits de l'offre.</td>
+                            </tr>
+                            <tr>
+                                <td>Taux de conversion des promotions sur desserts/boissons</td>
+                                <td>Analyser l'efficacité des promotions spécifiques sur les desserts et boissons</td>
+                                <td><pre class="sql-code">SELECT COUNT(*) AS ventes_promos
+FROM ventes
+WHERE produit_type IN ('dessert', 'boisson')
+AND promotion = 1;</pre></td>
+                                <td>Aide à comprendre l'impact des promotions sur les ventes des desserts et boissons.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Conteneur 2 : L’offre de KDou -->
+            <div class="theme-container">
+                <h3 class="theme-title">L’offre de KDou</h3>
+                <div class="analyse-table-container">
+                    <table class="analyse-table">
+                        <thead>
+                            <tr>
+                                <th>Indicateur</th>
+                                <th>Objectif</th>
+                                <th>Calcul</th>
+                                <th>Importance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Taux de diversité des produits proposés par KDou</td>
+                                <td>Évaluer la diversité de l'offre en fonction des catégories de produits</td>
+                                <td>Diversité = Nombre de catégories / Total des produits proposés</td>
+                                <td>Mesure la variété des produits, ce qui peut influencer l'attractivité de KDou.</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre moyen d'articles ajoutés au panier par client</td>
+                                <td>Calculer la moyenne d’articles ajoutés au panier par client pour évaluer la pertinence de l’offre</td>
+                                <td><pre class="sql-code">SELECT AVG(nb_articles) AS avg_panier
+FROM panier
+WHERE id_client = {client_id};</pre></td>
+                                <td>Permet d'évaluer l'attractivité des produits et leur influence sur les décisions d'achat des clients.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Conteneur 3 : Provenance des produits -->
+            <div class="theme-container">
+                <h3 class="theme-title">Provenance des produits</h3>
+                <div class="analyse-table-container">
+                    <table class="analyse-table">
+                        <thead>
+                            <tr>
+                                <th>Indicateur</th>
+                                <th>Objectif</th>
+                                <th>Calcul</th>
+                                <th>Importance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Part des produits locaux dans l'offre</td>
+                                <td>Mesurer la proportion de produits locaux par rapport aux produits importés</td>
+                                <td>Part des produits locaux = Produits locaux / Total des produits × 100</td>
+                                <td>Un pourcentage élevé de produits locaux peut indiquer un soutien à l’économie locale et une réponse à la demande des consommateurs.</td>
+                            </tr>
+                            <tr>
+                                <td>Coût moyen des produits locaux vs importés</td>
+                                <td>Comparer les coûts moyens des produits locaux et importés pour évaluer l'impact sur les marges</td>
+                                <td>Coût moyen local = Σ Coûts des produits locaux / Nombre de produits locaux</td>
+                                <td>Permet d'évaluer l'impact des coûts d'approvisionnement sur les marges bénéficiaires.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Conteneur 4 : La clientèle -->
+            <div class="theme-container">
+                <h3 class="theme-title">La clientèle</h3>
+                <div class="analyse-table-container">
+                    <table class="analyse-table">
+                        <thead>
+                            <tr>
+                                <th>Indicateur</th>
+                                <th>Objectif</th>
+                                <th>Calcul</th>
+                                <th>Importance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Taux de fidélité des clients</td>
+                                <td>Mesurer le taux de fidélité des clients, c’est-à-dire la proportion de clients qui reviennent acheter</td>
+                                <td>Taux de fidélité = Clients récurrents / Clients totaux × 100</td>
+                                <td>La fidélité des clients est cruciale pour la rentabilité et la réduction des coûts d'acquisition de nouveaux clients.</td>
+                            </tr>
+                            <tr>
+                                <td>Segmentation des clients par tranche d'âge</td>
+                                <td>Identifier les groupes d'âge les plus représentés dans la clientèle de KDou</td>
+                                <td><pre class="sql-code">SELECT CASE
+       WHEN age BETWEEN 18 AND 24 THEN '18-24'
+       WHEN age BETWEEN 25 AND 34 THEN '25-34'
+       WHEN age BETWEEN 35 AND 44 THEN '35-44'
+       WHEN age BETWEEN 45 AND 54 THEN '45-54'
+       ELSE '55+' END AS age_group,
+       COUNT(*) AS count_clients
+FROM clients
+GROUP BY age_group;</pre></td>
+                                <td>Permet de mieux comprendre les besoins et attentes des différentes tranches d'âge, pour mieux cibler les offres.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <div class="sidebar">
+            <a href="proj.html" class="link-box">Page de Présentation</a>
+            <a href="mission_1.html" class="link-box">Rapport Mission 1</a>
+            <a href="mission_2.html" class="link-box">Rapport Mission 2</a>
+            <a href="mission_4.html" class="link-box">Rapport Mission 4</a>
+        </div>
+    </main>
+	 <footer>
+        <p>&copy;  Chaïma, Angela & Romann</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Barre latÃŠrale */
+#sidebar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 150px; /* Largeur fixe */
+    height: 100vh; /* Prend toute la hauteur de la fenÃĒtre */
+    background-color: #333;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px; /* RÃŠduction de la taille des liens */
+    font-size: 1rem; /* RÃŠduction de la taille du texte */
+    font-weight: 500;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: #218838; /* Changement de couleur au survol */
+}
+
+/* Main Content */
+main {
+    margin-left: 150px; /* DÃŠcale le contenu principal pour la barre latÃŠrale */
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #87e39b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    top: 60px; 
+    position: relative; 
+    width: calc(100% - 150px); 
+    margin-left: 150px;
+    z-index: 999; 
+}
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+/* Logo Container */
+.logo-container {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+/* Logo */
+.logo {
+    width: 100px;
+    height: auto;
+    float: left;
+}
+header p {
+    text-align: center;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #333; /* Couleur de fond en gris foncÃŠ */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 60px; /* Fixe la hauteur de la barre de navigation */
+    width: 100%; /* La largeur reste toujours de 100% */
+    display: flex; /* Utilisation du flexbox pour centrer les ÃŠlÃŠments */
+    justify-content: center; /* Centrer horizontalement les ÃŠlÃŠments */
+    align-items: center; /* Centrer verticalement les ÃŠlÃŠments */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement les ÃŠlÃŠments du menu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%; /* EmpÃĒche l'adaptation en hauteur */
+}
+
+nav li {
+    padding: 0.8rem 1.5rem; /* Ajuste la taille des liens */
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* Taille du texte des liens */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+}
+
+nav a:hover, nav a.active {
+    background-color: #218838;
+    color: #fff;
+}
+
+/* Indicator Box */
+.indicator {
+    background: linear-gradient(135deg, #87e39b, #6fd884);
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Content Boxes */
+.description, .interpretation, .result, .query {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    background-color: #ecfae9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #28a745;
+}
+
+/* Headings */
+h2, h3 {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(40, 167, 69, 0.2);
+}
+
+/* Paragraphs */
+p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* Images */
+img {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 150px); /* Correspond Ã  la largeur totale moins la barre latÃŠrale */
+    margin-left: 150px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 120px; /* RÃŠduction de la largeur de la barre latÃŠrale */
+    }
+
+    header {
+        width: calc(100% - 120px); /* Ajustement pour la largeur rÃŠduite */
+        margin-left: 120px;
+    }
+
+    main {
+        margin-left: 120px; /* Alignement avec la barre latÃŠrale rÃŠduite */
+    }
+}

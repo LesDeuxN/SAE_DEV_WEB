@@ -1,0 +1,460 @@
+/* Style de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-top: 60px;
+}
+
+/* En-tête */
+header {
+    background-color: #87e39b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    top: 0;
+    width: calc(100% - 150px); /* Ajuste la largeur pour laisser place à la barre latérale */
+    margin-left: 150px; /* Décale l'en-tête pour ne pas être derrière la barre latérale */
+    z-index: 1000;
+}
+
+/* Conteneur du logo pour le positionner à gauche */
+.logo-container {
+    flex-shrink: 0;
+}
+
+/* Style pour le logo */
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.text-content {
+    text-align: left;
+    color: #fff;
+}
+
+/* Barre de navigation */
+nav {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.2em;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+p {
+    text-align: justify;
+}
+
+/* Les liens de navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+.nav-links li {
+    margin: 0 12px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 10px;
+    font-size: 14px;
+    display: block;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Conteneur de la barre latérale */
+.sidebar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 150px;
+    height: calc(100vh - 53px);
+    background-color: #333;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: block;
+    width: 70%;
+    text-align: center;
+    background-color: #87e39b;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Ajustement pour que le contenu principal ne passe pas sous la barre latérale */
+main {
+    margin-left: 170px;
+    padding: 20px;
+}
+
+/* Modifications sur le padding et bordure des sections */
+section {
+    margin-bottom: 20px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #87e39b;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Section Objectif Principal */
+.objectif-principal-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* Bloc à gauche avec fond vert */
+.left-block {
+    background-color: #87e39b;
+    color: white;
+    padding: 20px;
+    width: 25%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* Bloc à droite avec encadrement */
+.right-block {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 70%;
+    background-color: white;
+}
+
+/* Tableaux */
+.analyse-table-container {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.analyse-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse; /* Maintient l'affichage des cellules */
+
+    border-radius: 10px; /* Ajoute des coins arrondis */
+    overflow: hidden; /* Empêche le débordement des coins arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet esthétique */
+}
+
+.analyse-table th, .analyse-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.analyse-table th {
+    background-color: #87e39b;
+    color: white;
+    font-size: 16px;
+}
+
+.analyse-table td {
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+
+.analyse-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.analyse-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.analyse-table td:first-child,
+.analyse-table th:first-child {
+    width: 25%;
+}
+
+.analyse-table td:nth-child(2),
+.analyse-table th:nth-child(2) {
+    width: 20%;
+}
+
+.analyse-table td:nth-child(3),
+.analyse-table th:nth-child(3) {
+    width: 20%;
+}
+
+.analyse-table td:nth-child(4),
+.analyse-table th:nth-child(4) {
+    width: 20%;
+}
+
+.analyse-table td:nth-child(4) {
+    text-align: left;
+}
+
+.analyse-table td:nth-child(5),
+.analyse-table th:nth-child(5) {
+    width: 20%;
+}
+
+/* Style du conteneur des liens vers les documents des missions */
+.link-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.link-box {
+    flex: 1 1 100px;
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #f0f0f0;
+    color: #87e39b;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #87e39b;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-box:hover {
+    background-color: #87e39b;
+    color: white;
+}
+
+/* Images */
+img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Pied de page */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    bottom: 0; /* Positionne le footer en bas de la page */
+    left: 0;
+    width: 100%; /* S'étend sur toute la largeur de la page */
+    z-index: 1000; /* Assure que le footer est au-dessus des autres éléments */
+}
+
+footer a {
+    color: #87e39b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    text-align: center;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        margin-left: 120px;
+        width: calc(100% - 120px);
+    }
+
+    .menu-icon {
+        display: block;
+        text-align: center;
+        background-color: #333;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        width: 250px;
+        border-radius: 8px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 8px 0;
+    }
+
+    .nav-links li a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .sidebar {
+        width: 120px;
+    }
+
+    main {
+        margin-left: 130px;
+    }
+
+    .sidebar a {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .left-block {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .right-block {
+        width: 100%;
+    }
+
+@media (max-width: 768px) {
+    .objectif-principal-section {
+        flex-direction: column; /* Aligne les blocs en colonne */
+    }
+
+    .left-block, .right-block {
+        width: 100%; /* Les deux blocs prennent toute la largeur */
+    }
+
+    .left-block {
+        margin-bottom: 20px; /* Ajoute un espacement entre les deux blocs */
+    }
+	
+    /* Réduire la barre latérale */
+    .sidebar {
+        width: 80px; /* Rétrécit la largeur de la barre latérale */
+        padding: 10px 5px; /* Réduit les marges internes */
+    }
+
+    .sidebar a {
+        font-size: 9px; /* Réduit la taille du texte */
+        padding: 5px; /* Réduit les marges autour des liens */
+        width: 90%; /* Les liens prennent moins de place */
+		text-align: center;
+    }
+
+    /* Augmenter la largeur de l'en-tête */
+    header {
+        margin-left: 80px; /* S'ajuste à la nouvelle largeur de la barre latérale */
+        width: calc(100% - 80px); /* Remplit l'espace restant */
+    }
+
+    /* Augmenter la largeur du contenu principal */
+    main {
+        margin-left: 90px; /* S'ajuste pour la barre latérale rétrécie */
+    }
+
+    /* Réorganisation des blocs dans la section Objectif Principal */
+    .objectif-principal-section {
+        flex-direction: column; /* Aligne verticalement */
+    }
+
+    .left-block, .right-block {
+        width: 100%; /* Les deux blocs prennent toute la largeur */
+    }
+
+    .left-block {
+        margin-bottom: 20px; /* Ajoute un espace sous le left-block */
+    }
+}
+}
+/* Conteneur de chaque tableau et titre */
+.theme-container {
+    background-color: #333; /* Couleur de fond */
+    padding: 20px; /* Espacement interne */
+    margin-bottom: 20px; /* Espacement entre les conteneurs */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+}
+
+.theme-container .theme-title {
+    color: white; /* Couleur du texte du titre */
+    font-size: 18px; /* Taille du texte */
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 15px; /* Espacement sous le titre */
+}
+
+.theme-container .analyse-table-container {
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+.theme-container .analyse-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9; /* Couleur des tableaux */
+    box-shadow: none; /* Supprime les ombres des tableaux */
+}

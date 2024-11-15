@@ -1,0 +1,101 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Introduction</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <header class="header">
+      <nav class="conteneur">
+        <ul>
+          <li><a href="introduction.html">Introduction</a></li>
+          <li><a href="Mission_1.html">Mission 1</a></li>
+          <li><a href="Mission_2.html">Mission 2</a></li>
+          <li><a href="Mission_3.html">Mission 3</a></li>
+          <li><a href="Conclusion.html">Conclusion</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h1>Introduction</h1>
+        <h1>Présentation du Groupe</h1>
+        <p>Rommann : Introduction et conclusion</p>
+        <p>Hrant : Mission 1</p>
+        <p>Angela : Mission 2</p>
+        <p>Chaima : Mission 3</p>
+        
+        <h1>Contexte</h1>
+        
+        <article class="contexte-conteneur">
+          <div class="contexte-text">
+            <p>Depuis le début de l'année, nous nous sommes vues attribuées différentes missions nous permettant de comprendre les fonctionnements des bases de données. La première mission qui nous a été donnée consistait à répondre à plusieurs questions en cherchant des informations sur l'excel des données de Kdou.</p>
+          </div>
+          <div class="contexte-images">
+            <img src="images/Mission1.png">
+            <img src="images/Mission1_2.png">
+            <img src="images/Exxel.png">
+          </div>
+        </article>
+
+        <br><br><br><br><br>
+
+        <article class="contexte-conteneur">
+          <div class="contexte-text">
+            <p>Par la suite, à partir de la mission 2, nous avons dû répondre à d'autres questions différemment.</p>
+          </div>
+          <div class="contexte-images">
+            <div class="contexte-texte">
+              <img src="images/Mission3.png" alt="Image exemple">
+            </div>
+          </div>
+        </article>
+
+        <br><br><br><br><br>
+
+        <article class="contexte-conteneur">
+          <div class="contexte-text">
+            <p>En effet, il fallait répondre à ces différentes questions par des créations de requêtes en QBE ainsi qu'en SQL.</p>
+          </div>
+          <div class="contexte-images">
+            <img src="images/Access.png" alt="Image exemple">
+          </div>
+        </article>
+
+        <br>
+
+        <article class="contexte-conteneur">
+          <div class="contexte-text">
+            <p>Ici, on a le QBE.</p>
+          </div>
+          <div class="contexte-images">
+            <img src="images/AccessQBE.png" alt="Image exemple">
+          </div>
+        </article>
+
+        <br>
+
+        <article class="contexte-conteneur">
+          <div class="contexte-text">
+            <p>Le SQL.</p>
+          </div>
+          <div class="contexte-images">
+            <img src="images/AccessSQL.png">
+          </div>
+        </article>
+
+        <br>
+
+        <p>Le but du compte rendu ici présent est de montrer les solutions trouvées afin de fournir des données intéressantes à Kdou et ainsi permettre une évolution de celui-ci grâce à une connaissance approfondie du marché avec :</p>
+        <br><br>
+        <ul>
+          <li>Mission 1 - Un bilan sur l’étude des données réalisées</li>
+          <li>Mission 2 - La présentation de 4 indicateurs nous permettant d’avoir une meilleure vision du marché</li>
+          <li>Mission 3 - La présentation d’indicateurs sur des thèmes précis</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

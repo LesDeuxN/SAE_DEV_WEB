@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 2 - Analyse des Indicateurs</title>
+    <link rel="stylesheet" href="style_mission2.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="logo" class="logo">
+        </div>
+        <h1>Mission 2 - Analyse des Indicateurs</h1>
+        <p>Analyse approfondie des indicateurs de performance pour KDou.</p>
+    </header>
+	 <nav>
+        <!-- Menu toggle (checkbox) -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776; Menu</label>
+
+        <!-- Menu (ul) qui sera affiché selon la taille de l'écran -->
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#indicator1">Indicateur 1</a></li>
+            <li><a href="#indicator2">Indicateur 2</a></li>
+            <li><a href="#indicator3">Indicateur 3</a></li>
+            <li><a href="#indicator4">Indicateur 4</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Introduction</h2>
+            <p>Voici le rapport de la mission 2. Cette page présente les différents résultats obtenus lors de l'analyse des indicateurs, qui seront bénéfiques pour KDou.</p>
+        </section>
+
+        <section class="objectif-principal-section">
+            <div class="left-block">
+                <h3>Objectif Principal</h3>
+            </div>
+            <div class="right-block">
+                <p>L'objectif de la Mission 2 est d'analyser différents indicateurs clés de performance pour KDou, notamment la gestion des emballages, le chiffre d'affaires, l'activité des clients et la répartition géographique de la clientèle. Cette analyse permettra de prendre des décisions stratégiques éclairées.</p>
+            </div>
+        </section>
+
+        <!-- Indicateur 1 -->
+        <article id="indicator1" class="indicator">
+            <h2>Indicateur 1 : Gestion des Emballages</h2>
+            <section class="description">
+                <h3>Énoncé</h3>
+                <p>Nombre d'emballages spécifiques (carton, verre, etc.) utilisés par les clients.</p>
+            </section>
+            <section class="interpretation">
+                <h3>Interprétation</h3>
+                <p>Cette information est importante pour la gestion des déchets et la promotion du développement durable. En identifiant les types d'emballages utilisés (comme le carton ou le verre), il devient possible d'adapter les stratégies d'approvisionnement, de marketing et de recyclage.</p>
+            </section>
+            <section class="result">
+                <h3>Résultat</h3>
+                <img src="indicateur1.png" alt="Résultat de l'indicateur 1" class="result-image">
+            </section>
+            <section class="query">
+                <h3>Code SQL</h3>
+                <p>SELECT NomProd, QteParUnite
+<br>FROM Produit 
+<br>WHERE ((QteParUnite LIKE "*carton*") OR (QteParUnite LIKE "*bouteille*"));<p>
+            </section>
+        </article>
+
+        <!-- Indicateur 2 -->
+        <article id="indicator2" class="indicator">
+            <h2>Indicateur 2 : Chiffre d'affaires</h2>
+            <section class="description">
+                <h3>Énoncé</h3>
+                <p>Calcul du chiffre d'affaires total de l'entreprise.</p>
+            </section>
+            <section class="interpretation">
+                <h3>Interprétation</h3>
+                <p>Cette information est importante pour évaluer la santé financière de l'entreprise. Le chiffre d'affaires permet à la direction de mesurer l'impact des stratégies commerciales, de marketing et des produits proposés. Une augmentation du chiffre d'affaires indique généralement que les efforts déployés portent leurs fruits, tandis qu'une baisse peut suggérer la nécessité d’ajuster les tactiques ou d’explorer de nouveaux marchés. En suivant de près cet indicateur, l'entreprise peut prendre des décisions éclairées sur l'allocation des ressources et les investissements à privilégier pour favoriser sa croissance et sa rentabilité.</p>
+            </section>
+            <section class="result">
+                <h3>Résultat</h3>
+                    <table>
+                        <thead>
+                                <th>chiffre_affaire</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 648 176. 92</td>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="query">
+                <h3>Code SQL</h3>
+                <p>SELECT SUM(PrixUnitCli * QteCom) AS chiffre_affaire
+<br>FROM DetailCommande;</p>
+            </section>
+        </article>
+
+        <!-- Indicateur 3 -->
+        <article id="indicator3" class="indicator">
+            <h2>Indicateur 3 : Clients Inactifs</h2>
+            <section class="description">
+                <h3>Énoncé</h3>
+                <p>Identification des clients n'ayant pas encore passé de commande.</p>
+            </section>
+            <section class="interpretation">
+                <h3>Interprétation</h3>
+                <p>Cette information est importante pour identifier les clients inactifs et mettre en place des campagnes de relance adaptées. Cela permet non seulement de réactiver des clients qui n'ont pas passé de commande depuis un certain temps, mais aussi de maximiser le potentiel de vente sans avoir à chercher constamment de nouveaux clients, ce qui est souvent plus coûteux. En ciblant ces clients, l'entreprise peut renforcer la fidélisation en leur offrant des promotions ou des services personnalisés, ce qui augmente la probabilité de leur retour. Cela permet de maintenir un revenu stable tout en renforçant les relations à long terme avec les clients.</p>
+            </section>
+                <section class="result">
+                    <h3>Résultat</h3>
+                    <img src="indicateur3.png" alt="Résultat de l'indicateur 3" class="result-image">
+                </section>
+                <section class="query">                
+				<h3>Code SQL</h3>
+                <p>SELECT cl.SocieteCli
+<br>FROM Client cl
+<br>LEFT JOIN Commande co
+<br>ON cl.CodeCli = co.CodeCli
+<br>WHERE co.NoCom IS NULL;</p>
+            </section>
+        </article>
+
+        <!-- Indicateur 4 -->
+        <article id="indicator4" class="indicator">
+            <h2>Indicateur 4 : Répartition Géographique des Clients</h2>
+            <section class="description">
+                <h3>Énoncé</h3>
+                <p>Dans quelles villes la clientèle est-elle la plus importante ?</p>
+            </section>
+            <section class="interpretation">
+                <h3>Interprétation</h3>
+                <p>Cette information est importante pour comprendre la répartition géographique des clients, car elle permet de cibler plus précisément les efforts de marketing et d’adapter les services en fonction des besoins spécifiques de chaque région. Par exemple, certaines régions peuvent nécessiter des campagnes publicitaires plus ciblées ou des produits spécifiques pour répondre à la demande locale. De plus, cette analyse peut influencer des décisions stratégiques comme l’ouverture de nouveaux points de vente ou le renforcement de la présence dans certaines zones, ce qui permet à l’entreprise de mieux se positionner et de maximiser ses opportunités de croissance.</p>
+            </section>
+            <section class="result">
+                <h3>Résultat</h3>
+                <img src="indicateur4.png" alt="Résultat de l'indicateur 4" class="result-image">
+            </section>
+            <section class="query">
+                <h3>Code SQL</h3>
+                <p>SELECT cl.VilleCli, COUNT(*) AS NbrClients
+<br>FROM Client cl
+<br>GROUP BY cl.VilleCli
+<br>ORDER BY NbrClients DESC;</p>
+            </section>
+        </article>
+		</main>
+		<div id="sidebar">
+			<ul class="sidebar-links">
+				<li><a href="Introduction.html" class="sidebar-link">Page de Présentation</a></li>
+				<li><a href="mission_1.html" class="sidebar-link">Rapport Mission 1</a></li>
+				<li><a href="mission_3.html" class="sidebar-link">Rapport Mission 3</a></li>
+				<li><a href="mission_4.html" class="sidebar-link">Rapport Mission 4</a></li>
+			</ul>
+		</div>
+    <footer>
+        <p>&copy;  Chaïma, Angela & Romann</p>
+    </footer>
+
+</body>
+</html>
